@@ -17,11 +17,9 @@ public class Main {
                 
                 Enter your choice: \s""");
 
-        Random rand = new Random();
         Scanner input = new Scanner(System.in);
         String difficulty = input.nextLine();
 
-        int randomNumber = rand.nextInt(100)+1;
 
         switch (difficulty) {
             case "1" :
