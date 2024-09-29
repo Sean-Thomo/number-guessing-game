@@ -56,7 +56,7 @@ public class Main {
             } else if (randomNumber > number) {
                 System.out.println("Incorrect! The number is greater than " + number);
             } else {
-                System.out.println("Congratulations! You guessed the correct number in " + counter + "attemps.");
+                System.out.println("Congratulations! You guessed the correct number in " + counter + " attempts.");
                 chances = 0;
             }
         }
