@@ -25,11 +25,42 @@ public class Main {
 
         switch (difficulty) {
             case "1" :
-                System.out.println("Easy (10 chances).");
+                guessDifficulty("Easy", 10);
+                break;
             case "2" :
-                System.out.println("Medium (5 chances)");
+                guessDifficulty("Medium", 5);
+                break;
             case "3" :
-                System.out.println("Hard (3 chances)");
+                guessDifficulty("Hard", 3);
+                break;
+        }
+    }
+
+    private static void guessDifficulty(String difficulty, int chances) {
+        System.out.println("Great! You have selected the "+ difficulty + " difficulty level." +
+                "\nLet's start the game!");
+
+        Random rand = new Random();
+        int randomNumber = rand.nextInt(100)+1;
+        System.out.println(randomNumber);
+        int counter = 0;
+
+        while (chances != 0) {
+            System.out.print("\nEnter your guess: ");
+            Scanner input = new Scanner(System.in);
+            int number = input.nextInt();
+
+            chances --;
+            counter ++;
+
+            if (randomNumber < number) {
+                System.out.println("Incorrect! The number is less than " + number);
+            } else if (randomNumber > number) {
+                System.out.println("Incorrect! The number is greater than " + number);
+            } else {
+                System.out.println("Congratulations! You guessed the correct number in " + chances + "attemps.");
+                chances = 0;
+            }
         }
     }
 }
