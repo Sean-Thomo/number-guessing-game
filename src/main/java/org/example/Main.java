@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -16,7 +17,19 @@ public class Main {
                 
                 Enter your choice: \s""");
 
+        Random rand = new Random();
         Scanner input = new Scanner(System.in);
         String difficulty = input.nextLine();
+
+        int randomNumber = rand.nextInt(100)+1;
+
+        switch (difficulty) {
+            case "1" :
+                System.out.println("Easy (10 chances).");
+            case "2" :
+                System.out.println("Medium (5 chances)");
+            case "3" :
+                System.out.println("Hard (3 chances)");
+        }
     }
 }
